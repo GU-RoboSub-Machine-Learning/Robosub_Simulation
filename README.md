@@ -42,13 +42,12 @@ You can use this command to start up container after: `docker start -ai robosub`
 7. Go back to the repo > hit the green button code > click ssh >  copy the link there 
 8. Go back to your docker > git clone <copied_link> 
 9. Enter `cd Robosub_Simulation` 
-10. Enter`git checkout actual_working` 
+10. Enter`git checkout dev` 
 11. Enter `cmake CMakeLists.txt`
 12. Enter `make` 
-13. Enter
-14. Enter `source devel/setup.sh` 
-15. Enter `roslaunch launch/gazebo.launch`
-16. To reset the simulation go on gazebo to Edit > Reset Model Poses > hit play 
+13. Enter `source devel/setup.sh` 
+14. Enter `roslaunch launch/gazebo.launch`
+15. To reset the simulation go on gazebo to Edit > Reset Model Poses > hit play 
 
 # Extra Notes
 - How to put a docker container on your external drive (from: How could I install Docker for Windows on drive E: (my SSD C: is full)? , see radicalshift’s post) 
