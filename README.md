@@ -32,7 +32,7 @@ Type this command to make sure your container works
 
 You can use this command to start up container after: `docker start -ai robosub`
 
-## How to run the Robosub Simulation in in Ros1/Gazebo1 Docker
+# How to run the Robosub Simulation in in Ros1/Gazebo1 Docker
 1. In your docker container run “apt install git” 
 2. Enter `ssh-keygen` 
 3. Keep hitting enter till the random art image appears 
@@ -47,7 +47,20 @@ You can use this command to start up container after: `docker start -ai robosub`
 12. Enter `make` 
 13. Enter `source devel/setup.sh` 
 14. Enter `roslaunch launch/gazebo.launch`
-15. To reset the simulation go on gazebo to Edit > Reset Model Poses > hit play 
+15. To reset the simulation go on gazebo to Edit > Reset Model Poses > hit play
+
+# How to run the real sense camera in Gazebo
+1. Cd to the RobosubSimulator repository saved to your computer
+2. Enter `git checkout camera` 
+3. Run `cmake CMakeLists.txt` 
+4. Run `make`
+5. Run `roslaunch launch/gazebo.launch`
+  a. You should see the camera model in gazebo 
+6. Run `export DISPLAY=host.docker.internal:0.0’ 
+7. Run `rviz` 
+8. On the bottom left press `Add` 
+9. Select the `Image` topic 
+10. In the `Image` topic in the left column set the topic to the `/real_sense_plugin`.  
 
 # Extra Notes
 - How to put a docker container on your external drive (from: How could I install Docker for Windows on drive E: (my SSD C: is full)? , see radicalshift’s post) 
