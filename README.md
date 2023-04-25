@@ -18,11 +18,11 @@ A Small Proof of Concept project to better understand the inner workings of ROS-
 
 You can use this command to start up container after: docker start -ai robosub 
 
-MAC: 
+## MAC: 
 
 Download XQuartz: https://www.xquartz.org/  
 
-Linux:  
+## Linux:  
 
 * enter `docker pull ehiga/proofofconcept`
 * `sudo docker run -it --name robosub ehiga/proofofconcept`
@@ -32,15 +32,28 @@ Type this command to make sure your container works
 
 You can use this command to start up container after: `docker start -ai robosub`
 
--------------------------------- 
+## How to run the Robosub Simulation in in Ros1/Gazebo1 Docker
+1. In your docker container run “apt install git” 
+2. Enter `ssh-keygen` 
+3. Keep hitting enter till the random art image appears 
+4. “vi /root/.ssh/id_rsa.pub” 
+5. Copy the entire key 
+6. Go to settings on github > ssh and gpg keys > add a new key  
+7. Go back to the repo > hit the green button code > click ssh >  copy the link there 
+8. Go back to your docker > git clone <copied_link> 
+9. Enter `cd Robosub_Simulation` 
+10. Enter`git checkout actual_working` 
+11. Enter `cmake CMakeLists.txt`
+12. Enter `make` 
+13. Enter
+14. Enter `source devel/setup.sh` 
+15. Enter `roslaunch launch/gazebo.launch`
+16. To reset the simulation go on gazebo to Edit > Reset Model Poses > hit play 
 
+# Extra Notes
 - How to put a docker container on your external drive (from: How could I install Docker for Windows on drive E: (my SSD C: is full)? , see radicalshift’s post) 
-
 - In copy the contents of "C:\Users\%USERNAME%\AppData\Local\Docker" to a folder in your external drive, with for example "D:\Docker_AppData" 
-
 - Then delete the entire folder "C:\Users\%USERNAME%\AppData\Local\Docker" 
-
 - And then run: mklink /j "C:\Users\%USERNAME%\AppData\Local\Docker" "D:\Docker_AppData" 
-
 - this folder takes up the most space, however you can do this for other folders if you want 
 
